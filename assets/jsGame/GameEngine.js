@@ -1,4 +1,4 @@
-const choices = ["rock", "paper", "scissors"];
+const choices = ["ROCK", "PAPER", "SCISSORS"];
 const playerDisplay = document.getElementById("playerDisplay");
 const computerDisplay = document.getElementById("computerDisplay");
 const resultDisplay = document.getElementById("resultDisplay");
@@ -14,15 +14,29 @@ function playGame(playerChoice) {
     }
     else {
         switch (playerChoice) {
-            case "rock":
-                (computerChoice) === "SCISSORS" ? result = "YOU WIN" : result = "YOU LOSE";
-                
-                return result;
-            case "paper":
-                (computerChoice) === "ROCK" ? result = "YOU WIN" : result = "YOU LOSE";
+            case "ROCK":
+                if (computerChoice === "SCISSORS") {
+                    result = "YOU WIN";
+                }
+                else {
+                    result = "YOU LOSE"
+                }
                 break;
-            case "scissors":
-                (computerChoice) === "PAPER" ? result = "YOU WIN" : result = "YOU LOSE";
+            case "PAPER":
+                if (computerChoice === "ROCK") {
+                    result = "YOU WIN";
+                }
+                else {
+                    result = "YOU LOSE"
+                }
+                break;
+            case "SCISSORS":
+                if (computerChoice === "PAPER") {
+                    result = "YOU WIN";
+                }
+                else {
+                    result = "YOU LOSE"
+                }
                 break;
         }
     }
@@ -30,5 +44,4 @@ function playGame(playerChoice) {
     playerDisplay.innerText = "PLAYER:" + playerChoice;
     computerDisplay.innerText = "COMPUTER:" + computerChoice;
     resultDisplay.innerText = result;
-
 }
