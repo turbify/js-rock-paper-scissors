@@ -7,7 +7,7 @@ const resultDisplay = document.getElementById("resultDisplay");
 
 function playGame(playerChoice) {
     const computerChoice = choices[Math.floor(Math.random() * 3)]
-    console.log(computerChoice);
+    console.log("computer choice: " + computerChoice);
     let result = "";
     if (playerChoice == computerChoice) {
         result = "DRAW";
@@ -15,17 +15,20 @@ function playGame(playerChoice) {
     else {
         switch (playerChoice) {
             case "rock":
-                (computerChoice) === "scissors" ? "YOU WIN" : "YOU LOSE";
-                break;
+                (computerChoice) === "SCISSORS" ? result = "YOU WIN" : result = "YOU LOSE";
+                
+                return result;
             case "paper":
-                (computerChoice) === "rock" ? "YOU WIN" : "YOU LOSE";
+                (computerChoice) === "ROCK" ? result = "YOU WIN" : result = "YOU LOSE";
                 break;
             case "scissors":
-                (computerChoice) === "paper" ? "YOU WIN" : "YOU LOSE";
+                (computerChoice) === "PAPER" ? result = "YOU WIN" : result = "YOU LOSE";
                 break;
         }
     }
-    playerDisplay.texContent = 'PLAYER: ${playerChoice}';
-    computerDisplay.texContent = 'COMPUTER: ${computerChoice}';
-    resultDisplay.texContent = result;
+
+    playerDisplay.innerText = "PLAYER:" + playerChoice;
+    computerDisplay.innerText = "COMPUTER:" + computerChoice;
+    resultDisplay.innerText = result;
+
 }
