@@ -9,7 +9,7 @@
   <meta name="description" content="">
   <meta name="author" content="Erico and Miki">
   <meta name="generator" content="Hugo 0.122.0">
-
+  <title>RPS</title>
   <link href="assets/dist/css/bootstrap.min.css" rel="stylesheet">
 
 
@@ -33,14 +33,16 @@
       <div class="card">
         <div id="choices">
 
-          <button onClick="playGame('rock')">ROCK</button>
-          <button onClick="playGame('paper')">PAPER</button>
-          <button onClick="playGame('scissors')">SCISSORS</button>
+          <button onClick="playGame('ROCK')"><img src="assets/textures/Paper.png"></button>
+          <button onClick="playGame('PAPER')"><img src="assets/textures/Rock.png"></button>
+          <button onClick="playGame('SCISSORS')"><img src="assets/textures/Scissors.png"></button>
+
+
 
         </div>
         <div id="playerDisplay">PLAYER: </div>
         <div id="computerDisplay">COMPUTER: </div>
-        <div id="resultDisplay"></div>
+        <div id="resultDisplay">RESULT</div>
 
       </div>
     </main>
