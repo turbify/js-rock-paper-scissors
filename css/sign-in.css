@@ -1,3 +1,12 @@
+@font-face {
+  font-family: ppixel;
+  src: url(../assets/fonts/PublicPixel.ttf);
+}
+
+body {
+  font-family: ppixel!important
+}
+
 html,
 body {
   height: 100%;
