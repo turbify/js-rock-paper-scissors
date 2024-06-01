@@ -76,6 +76,7 @@ function playGame(playerChoice) {
     playerDisplay.innerText = "PLAYER:" + playerChoice;
     computerDisplay.innerText = "COMPUTER:" + computerChoice;
     resultDisplay.innerText = result;
+    resultDisplay.classList.remove("greenText", "redText");
 
     switch (result) {
         case "YOU WIN":
@@ -87,9 +88,6 @@ function playGame(playerChoice) {
             computerScore++;
             resultDisplay.classList.add("redText");
             computerScoreDisplay.textContent = computerScore;
-            break;
-        case "DRAW":
-            resultDisplay.classList.add("drawText");
             break;
     }
 }
