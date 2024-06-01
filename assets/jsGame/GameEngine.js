@@ -4,6 +4,8 @@ const computerDisplay = document.getElementById("computerDisplay");
 const resultDisplay = document.getElementById("resultDisplay");
 const playerScoreDisplay = document.getElementById("playerScoreDisplay");
 const computerScoreDisplay = document.getElementById("computerScoreDisplay");
+const enemyImageDisplay = document.getElementById("enemyPickTexture");
+const playerImageDisplay = document.getElementById("playerPickTexture");
 let playerScore = 0;
 let computerScore = 0;
 
@@ -18,6 +20,7 @@ function playGame(playerChoice) {
     else {
         switch (playerChoice) {
             case "ROCK":
+
                 if (computerChoice === "SCISSORS") {
                     result = "YOU WIN";
                 }
@@ -51,10 +54,12 @@ function playGame(playerChoice) {
     switch (result) {
         case "YOU WIN":
             playerScore++;
+            resultDisplay.classList.add("greenText");
             playerScoreDisplay.textContent = playerScore;
             break;
         case "YOU LOSE":
             computerScore++;
+            resultDisplay.classList.add("redText");
             computerScoreDisplay.textContent = computerScore;
             break;
     }

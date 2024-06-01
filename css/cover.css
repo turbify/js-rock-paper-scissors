@@ -2,7 +2,7 @@
  * Globals
  */
 
- @font-face {
+@font-face {
   font-family: ppixel;
   src: url(../assets/fonts/PublicPixel.ttf);
 }
@@ -33,9 +33,17 @@ body {
 }
 
 @keyframes wiggle {
-  0% { transform: rotate(-5deg); }
-  50% { transform: rotate(5deg); }
-  100% { transform: rotate(-5deg); }
+  0% {
+    transform: rotate(-5deg);
+  }
+
+  50% {
+    transform: rotate(5deg);
+  }
+
+  100% {
+    transform: rotate(-5deg);
+  }
 }
 
 .wiggle {
@@ -142,4 +150,9 @@ body {
 
 .bd-mode-toggle .dropdown-menu .active .bi {
   display: block !important;
+}
+
+
+.greenText {
+  color: hsl(130, 84%, 54%);
 }
