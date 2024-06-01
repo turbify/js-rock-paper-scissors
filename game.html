@@ -18,6 +18,7 @@
 </head>
 
 <body class="d-flex h-100 text-center text-bg-dark">
+
   <div class="container-lg d-flex w-100 h-100 p-3 mx-auto flex-column">
     <header class="mb-auto">
       <div>
@@ -31,25 +32,25 @@
 
     <main class="px-3">
       <div>
-        <div id="enemyPickTexture">
-          <img src="assets/textures/BorderRed.png" class="wiggle m-4" alt="" width="128" height="128">
+        <div>
+          <img src="assets/textures/BorderRed.png" id="enemyPickTexture" class="wiggle m-4" alt="" width="128" height="128">
         </div>
 
         <div>
           <img src="assets/textures/vs.png" alt="" width="128" height="128">
         </div>
 
-        <div id="playerPickTexture">
-          <img src="assets/textures/BorderGreen.png" class="wiggle m-4" alt="" width="128" height="128">
+        <div>
+          <img src="assets/textures/BorderGreen.png" id="playerPickTexture" class="wiggle m-4" alt="" width="128" height="128">
         </div>
 
         <div id="choices">
 
-          <button onClick="playGame('ROCK')"><img src="assets/textures/RockWIthGreenBorder.png" alt="" width="128"
+          <button class="btn btn-success" onClick="playGame('ROCK')"><img src="assets/textures/RockWIthGreenBorder.png" alt="" width="128"
               height="128"></button>
-          <button onClick="playGame('PAPER')"><img src="assets/textures/PaperWithGreenBorder.png" alt="" width="128"
+          <button class="btn btn-success" onClick="playGame('PAPER')"><img src="assets/textures/PaperWithGreenBorder.png" alt="" width="128"
               height="128"></button>
-          <button onClick="playGame('SCISSORS')"><img src="assets/textures/ScissorsWithGreenBorder.png" alt=""
+          <button class="btn btn-success" onClick="playGame('SCISSORS')"><img src="assets/textures/ScissorsWithGreenBorder.png" alt=""
               width="128" height="128"></button>
 
 

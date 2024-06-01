@@ -4,16 +4,42 @@ const computerDisplay = document.getElementById("computerDisplay");
 const resultDisplay = document.getElementById("resultDisplay");
 const playerScoreDisplay = document.getElementById("playerScoreDisplay");
 const computerScoreDisplay = document.getElementById("computerScoreDisplay");
-const enemyImageDisplay = document.getElementById("enemyPickTexture");
-const playerImageDisplay = document.getElementById("playerPickTexture");
+var enemyImageDisplay = document.getElementById("enemyPickTexture");
+var playerImageDisplay = document.getElementById("playerPickTexture");
 let playerScore = 0;
 let computerScore = 0;
 
 
 function playGame(playerChoice) {
+
     const computerChoice = choices[Math.floor(Math.random() * 3)]
     console.log("computer choice: " + computerChoice);
     let result = "";
+
+    switch (playerChoice) {
+        case "ROCK":
+            playerImageDisplay.src = "assets/textures/RockWithGreenBorder.png"
+            break;
+        case "PAPER":
+            playerImageDisplay.src = "assets/textures/PaperWithGreenBorder.png"
+            break;
+        case "SCISSORS":
+            playerImageDisplay.src = "assets/textures/ScissorsWithGreenBorder.png"
+            break;
+    }
+
+    switch (computerChoice) {
+        case "ROCK":
+            enemyImageDisplay.src = "assets/textures/RockWithRedBorder.png"
+            break;
+        case "PAPER":
+            enemyImageDisplay.src = "assets/textures/PaperWithRedBorder.png"
+            break;
+        case "SCISSORS":
+            enemyImageDisplay.src = "assets/textures/ScissorsWithRedBorder.png"
+            break;
+    }
+
     if (playerChoice == computerChoice) {
         result = "DRAW";
     }
@@ -61,6 +87,9 @@ function playGame(playerChoice) {
             computerScore++;
             resultDisplay.classList.add("redText");
             computerScoreDisplay.textContent = computerScore;
+            break;
+        case "DRAW":
+            resultDisplay.classList.add("drawText");
             break;
     }
 }

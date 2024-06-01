@@ -47,7 +47,7 @@ body {
 }
 
 .wiggle {
-  animation: wiggle 0.5s infinite;
+  animation: wiggle 0.4s infinite;
   display: inline-block;
 }
 
@@ -155,4 +155,12 @@ body {
 
 .greenText {
   color: hsl(130, 84%, 54%);
+}
+
+.redText {
+  color: hsl(0, 84%, 54%);
+}
+
+.drawText {
+  color: hsl(0, 0%, 100%);
 }
