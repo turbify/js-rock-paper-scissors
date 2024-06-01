@@ -32,6 +32,17 @@ body {
   max-width: 42em;
 }
 
+@keyframes wiggle {
+  0% { transform: rotate(-5deg); }
+  50% { transform: rotate(5deg); }
+  100% { transform: rotate(-5deg); }
+}
+
+.wiggle {
+  animation: wiggle 0.5s infinite;
+  display: inline-block;
+}
+
 
 /*
  * Header
