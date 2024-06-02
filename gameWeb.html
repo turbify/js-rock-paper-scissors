@@ -23,7 +23,7 @@
   <div class="container-lg d-flex w-100 h-100 p-3 mx-auto flex-column">
     <header class="mb-auto">
       <div>
-        <h4 class="float-md-start mb-0">ROCK - PAPER - SCISSORS</h4>
+        <h4 class="float-md-start mb-0" id="roomTitle"></h4>
         <nav class="nav nav-masthead justify-content-center float-md-end">
           <a class="nav-link fw-bold py-1 px-0 active" aria-current="page" href="#">In Game</a>
           <a class="nav-link fw-bold py-1 px-0" href="index.html">Leave</a>
@@ -62,8 +62,8 @@
   <div class="position-absolute m-5 p-3 card bg-light"
     style="bottom: 0; right: 4%; background-color: #c0c0c0!important;">
 
-    <div class="card-header bg-dark text-bg-dark p-3 mb-3" id="roomTitle">
-
+    <div class="card-header bg-dark text-bg-dark p-3 mb-3">
+      Result
     </div>
 
     <div id="playerDisplay">PLAYER: </div>
@@ -96,7 +96,7 @@
   const roomName = getQueryParam('roomName');
 
   // Display the room name (for demonstration purposes)
-  document.getElementById('roomTitle').innerText = 'Welcome to ' + roomName;
+  document.getElementById('roomTitle').innerText = 'Room: ' + roomName;
 
   // Here you can add the code to establish a connection to the room using the roomName
 </script>
