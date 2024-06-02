@@ -1,19 +1,14 @@
-
-// Function to get query parameters
 function getQueryParam(param) {
     var urlParams = new URLSearchParams(window.location.search);
     return urlParams.get(param);
 }
 
-// Get the 'name' query parameter
 var userName = getQueryParam('name');
-console.log("Retrieved userName:", userName); // Add this line for debugging
+console.log("Retrieved userName:", userName);
 
-// Get the welcomeMessage element
 var welcomeMessageElement = document.getElementById('welcomeMessage');
-console.log("welcomeMessageElement:", welcomeMessageElement); // Add this line for debugging
+console.log("welcomeMessageElement:", welcomeMessageElement);
 
-// Display a welcome message
 if (userName && welcomeMessageElement) {
     welcomeMessageElement.innerText = "Welcome, " + userName + "!";
 } else {
