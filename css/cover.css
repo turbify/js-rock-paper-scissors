@@ -51,6 +51,10 @@ body {
   display: inline-block;
 }
 
+button:hover {
+  animation: wiggle 0.4s infinite;
+}
+
 
 /*
  * Header
