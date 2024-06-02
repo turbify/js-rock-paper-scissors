@@ -1,0 +1,17 @@
+W:\VisualStudio\JSProjekt\GameServer\GameServer\bin\Debug\net8.0\GameServer.exe
+W:\VisualStudio\JSProjekt\GameServer\GameServer\bin\Debug\net8.0\GameServer.deps.json
+W:\VisualStudio\JSProjekt\GameServer\GameServer\bin\Debug\net8.0\GameServer.runtimeconfig.json
+W:\VisualStudio\JSProjekt\GameServer\GameServer\bin\Debug\net8.0\GameServer.dll
+W:\VisualStudio\JSProjekt\GameServer\GameServer\bin\Debug\net8.0\GameServer.pdb
+W:\VisualStudio\JSProjekt\GameServer\GameServer\obj\Debug\net8.0\GameServer.GeneratedMSBuildEditorConfig.editorconfig
+W:\VisualStudio\JSProjekt\GameServer\GameServer\obj\Debug\net8.0\GameServer.AssemblyInfoInputs.cache
+W:\VisualStudio\JSProjekt\GameServer\GameServer\obj\Debug\net8.0\GameServer.AssemblyInfo.cs
+W:\VisualStudio\JSProjekt\GameServer\GameServer\obj\Debug\net8.0\GameServer.csproj.CoreCompileInputs.cache
+W:\VisualStudio\JSProjekt\GameServer\GameServer\obj\Debug\net8.0\GameServer.dll
+W:\VisualStudio\JSProjekt\GameServer\GameServer\obj\Debug\net8.0\refint\GameServer.dll
+W:\VisualStudio\JSProjekt\GameServer\GameServer\obj\Debug\net8.0\GameServer.pdb
+W:\VisualStudio\JSProjekt\GameServer\GameServer\obj\Debug\net8.0\GameServer.genruntimeconfig.cache
+W:\VisualStudio\JSProjekt\GameServer\GameServer\obj\Debug\net8.0\ref\GameServer.dll
+W:\VisualStudio\JSProjekt\GameServer\GameServer\bin\Debug\net8.0\Newtonsoft.Json.dll
+W:\VisualStudio\JSProjekt\GameServer\GameServer\obj\Debug\net8.0\GameServer.csproj.AssemblyReference.cache
+W:\VisualStudio\JSProjekt\GameServer\GameServer\obj\Debug\net8.0\GameServer.csproj.Up2Date

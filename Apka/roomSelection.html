@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Room Selection</title>
+    <script>
+        async function fetchRooms() {
+            const response = await fetch('http://localhost:5003/rooms');
+            const rooms = await response.json();
+            displayRooms(rooms);
+        }
+
+        async function joinRoom(roomName) {
+            const response = await fetch('http://localhost:5003/join', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ roomName: roomName })
+            });
+            const data = await response.text();
+            alert(data);
+        }
+
+        async function createRoom() {
+            const roomName = prompt('Enter room name:');
+            if (roomName) {
+                const response = await fetch('http://localhost:5003/create', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ roomName: roomName })
+                });
+                const data = await response.text();
+                alert(data);
+                fetchRooms(); // Refresh room list after creating a room
+            }
+        }
+
+        function displayRooms(rooms) {
+            const roomList = document.getElementById('roomList');
+            roomList.innerHTML = ''; // Clear previous content
+
+            rooms.forEach(room => {
+                const listItem = document.createElement('li');
+                listItem.textContent = room;
+                
+                const joinButton = document.createElement('button');
+                joinButton.textContent = 'Join';
+                joinButton.addEventListener('click', () => joinRoom(room));
+                
+                listItem.appendChild(joinButton);
+                roomList.appendChild(listItem);
+            });
+        }
+    </script>
+</head>
+<body onload="fetchRooms()">
+    <h1>Room Selection</h1>
+    <ul id="roomList"></ul>
+    <form onsubmit="event.preventDefault(); createRoom()">
+        <input type="submit" value="Create Room">
+    </form>
+</body>
+</html>
