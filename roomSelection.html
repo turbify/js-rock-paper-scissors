@@ -1,9 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Room Selection</title>
+
+    <link rel="icon" href="/assets/textures/favicon.ico">
+    <link href="assets/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="css/cover.css" rel="stylesheet">
+
     <script>
         async function fetchRooms() {
             const response = await fetch('http://localhost:5003/rooms');
@@ -19,8 +26,14 @@
                 },
                 body: JSON.stringify({ roomName: roomName })
             });
-            const data = await response.text();
-            alert(data);
+
+            if (response.ok) {
+                // If the response is successful, redirect to gameWeb.html with the room name as a query parameter
+                window.location.href = 'gameWeb.html?roomName=' + encodeURIComponent(roomName);
+            } else {
+                const data = await response.text();
+                alert('Error: ' + data);
+            }
         }
 
         async function createRoom() {
@@ -44,19 +57,87 @@
             roomList.innerHTML = ''; // Clear previous content
 
             rooms.forEach(room => {
-                const listItem = document.createElement('li');
-                listItem.textContent = room;
-                
-                const joinButton = document.createElement('button');
-                joinButton.textContent = 'Join';
-                joinButton.addEventListener('click', () => joinRoom(room));
-                
-                listItem.appendChild(joinButton);
-                roomList.appendChild(listItem);
+                const colDiv = document.createElement('div');
+                colDiv.className = 'col';
+
+                // Create the card div with class 'card'
+                const cardDiv = document.createElement('div');
+                cardDiv.className = 'card';
+
+                // Create the card body div with class 'card-body'
+                const cardBodyDiv = document.createElement('div');
+                cardBodyDiv.className = 'card-body';
+
+                // Create the first h5 element with class 'card-title'
+                const h5Title1 = document.createElement('h5');
+                h5Title1.className = 'card-title';
+                h5Title1.textContent = 'Classic game';
+
+                // Create the second h5 element with class 'card-title'
+                const h5Title2 = document.createElement('h5');
+                h5Title2.className = 'card-title';
+                h5Title2.textContent = room;
+
+                // Create the anchor element with class 'btn btn-primary'
+                const anchor = document.createElement('a');
+                anchor.href = '#';
+                anchor.className = 'btn btn-primary';
+                anchor.textContent = 'Join';
+                anchor.addEventListener('click', () => joinRoom(room));
+
+                // Append the h5 elements and anchor to the card body div
+                cardBodyDiv.appendChild(h5Title1);
+                cardBodyDiv.appendChild(h5Title2);
+                cardBodyDiv.appendChild(anchor);
+
+                // Append the card body div to the card div
+                cardDiv.appendChild(cardBodyDiv);
+
+                // Append the card div to the main div
+                colDiv.appendChild(cardDiv);
+
+                // Append the main div to the container div
+                roomList.appendChild(colDiv);
             });
         }
+        fetchRooms();
     </script>
 </head>
+
+<body class="d-flex h-100 text-center text-bg-dark bg-dark">
+
+    <div class="container-lg d-flex w-100 h-100 p-3 mx-auto flex-column">
+        <header class="mb-auto">
+            <div>
+                <h3 class="float-md-start mb-0">ROCK - PAPER - SCISSORS</h3>
+                <nav class="nav nav-masthead justify-content-center float-md-end">
+                    <a class="nav-link fw-bold py-1 px-0 active" aria-current="page" href="#">Home</a>
+                    <a class="nav-link fw-bold py-1 px-0" href="#">About</a>
+                </nav>
+            </div>
+        </header>
+
+        <main class="px-3">
+            <h2 class="m-5">Room Selection</h2>
+            <form onsubmit="event.preventDefault(); createRoom()">
+                <input type="submit" value="Create Room" class="btn btn-success w-50 py-2">
+            </form>
+
+            <div class="row row-cols-1 row-cols-md-3 g-4 m-5" id="roomList">
+
+            </div>
+
+        </main>
+
+        <footer class="mt-auto text-white-50">
+            <p>Mikołaj Górowski & Eryk Sobczak</p>
+        </footer>
+    </div>
+
+    <script src="assets/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+<!--
 <body onload="fetchRooms()">
     <h1>Room Selection</h1>
     <ul id="roomList"></ul>
@@ -64,4 +145,6 @@
         <input type="submit" value="Create Room">
     </form>
 </body>
+-->
+
 </html>
