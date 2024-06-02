@@ -158,11 +158,11 @@ button:hover {
 
 
 .greenText {
-  color: hsl(130, 84%, 54%);
+  color: #28a745;
 }
 
 .redText {
-  color: hsl(0, 84%, 54%);
+  color: #dc3545;
 }
 
 .drawText {
