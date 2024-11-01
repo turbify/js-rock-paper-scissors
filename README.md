@@ -1,1 +1,1 @@
-https://turbify.github.io/javascriptAPP/
+https://turbify.github.io/js-rock-paper-scissors/
